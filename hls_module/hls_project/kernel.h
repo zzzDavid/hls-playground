@@ -2,9 +2,12 @@
 #define __KERNEL_H__
 
 void kernel(
-  float v0[1024][512],
-  float v1[512][1024],
-  float v2[1024][1024]
+  float v0[3][32][32],
+  float v1[6][3][3][3],
+  float v2[6][30][30],
+  float v3[3][32][32],
+  float v4[6][3][3][3],
+  float v5[6][30][30]
 );
 
 #endif

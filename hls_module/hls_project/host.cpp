@@ -26,27 +26,33 @@
 
 int main(int argc, char ** argv) {
   std::cout << " Initialize input...";
-  float v0[1024][512],
-  float v1[512][1024],
-  float v2[1024][1024]
+  float v0[1024][512];
+  float v1[512][1024];
+  float v2[1024][1024];
+  float v3[1024][512];
+  float v4[512][1024];
+  float v5[1024][1024];
   for (size_t i = 0; i < 1024; i++) {
     for (size_t j = 0; j < 512; j++) {
       v0[i][j] = 2.0;
+      v3[i][j] = 2.0;
     }
   }
   for (size_t i = 0; i < 512; i++) {
     for (size_t j = 0; j < 1024; j++) {
       v1[i][j] = 2.0;
+      v4[i][j] = 2.0;
     }
   }
   for (size_t i = 0; i < 1024; i++) {
     for (size_t j = 0; j < 1024; j++) {
       v2[i][j] = 0.0;
+      v5[i][j] = 0.0;
     }
   }
 
   std::cout << " Done!" << std::endl;
   std::cout << "Calling kernel function....";
-  kernel(v0, v1, v2);
+  kernel(v0, v1, v2, v3, v4, v5);
   std::cout << " Done!" << std::endl;
 }
